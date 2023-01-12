@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Log-in{% endblock %}
+{% block content %}
+    {% if request.user.is_authenticated %}
+
+<p><h1  style="color:#e1e1bb;"> User is logged in :) )</h1></p>
+<p> <h1  style="color:#e1e1bb;"> Username -->  {{ request.user.username }}</h1></p>
+        <div class="general-container">
+            <div class="container top-container">
+                <div class="row">
+                    <div class="col-5 offset-4">
+                        <h3  style="color:#e1e1bb;">Введите текст для рассылки </h3>
+                        <div>
+                           <form action="" method="post" enctype="multipart/form-data">
+                               {% csrf_token %}
+                               <textarea name="texts" cols="40" rows="10" required id="id_texts" {{form.texts }}></textarea>
+                                 <p>  </p>
+                               <a style="color:#e1e1bb;" >Введите адрес получателя (@username)</a>
+                               <p><h3 style="color:#e1e1bb;">{{ form.contact }}</h3></p>
+                               <p><h3 style="color:#e1e1bb;">{{ form.gender }}</h3></p>
+                                <p>{{ form.file }}</p>
+                               <input type="date" class="form-row" {{ form.date_send }}>
+                               <input type="time" class="form-row"{{ form.time_send }}>
+                                <p>  </p>
+
+                                <button type="submit" class="btn btn-primary">Send spam</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
+
+
+
+{% endblock %}
