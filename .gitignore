@@ -31,8 +31,8 @@ var/
 #  before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
-django_telegram_spam_02.zip/
-django_telegram_spam_save_data_01.zip/
+.django_telegram_spam_02.zip/
+.django_telegram_spam_save_data_01.zip/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
